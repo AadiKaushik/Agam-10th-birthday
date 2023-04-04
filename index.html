@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Agam's Birthday Journey</title>
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			margin: 0;
+			background-color: #FFD700;
+		}
+		button {
+			font-size: 24px;
+			padding: 16px 32px;
+			background-color: #4CAF50;
+			color: #FFFFFF;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			margin: 8px;
+		}
+		button:hover {
+			background-color: #3E8E41;
+		}
+		h1 {
+			color: #000000;
+			text-align: center;
+			font-size: 48px;
+			margin: 0;
+			margin-bottom: 16px;
+			text-shadow: 2px 2px #fff;
+		}
+		h2{
+			color:#fff;
+			text-align: center;
+			font-size: 48px;
+			margin: 0;
+			margin-bottom: 16px;
+			text-shadow: 2px 2px #000;
+		}
+		p {
+			color: #FFFFFF;
+			text-align: center;
+			font-size: 24px;
+			margin: 0;
+		}
+		#startButton, #gameSelection button , #backButton{
+			display: block;
+			margin: 0 auto;
+		}
+		img {
+			max-width: 100%;
+			height: auto;
+			margin-top: 16px;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- First screen with button -->
+	<div>
+		<button onclick="beginJourney()">Begin</button>
+	</div>
+
+	<!-- Second screen with birthday message and game selection buttons -->
+	<div id="birthdayMessage" style="display: none;">
+		<h1>Today on Tuesday, It's Agam's birthday</h1>
+		<p>Let's go on a journey!</p>
+		<br>
+		<button id="startButton" style="display: none;" onclick="showGameSelection()">Let's Start</button>
+		<div id="gameSelection" style="display: none;">
+			<button onclick="selectGame('BGMI')">BGMI</button>
+			<button onclick="selectGame('Minecraft')">Minecraft</button>
+			<button onclick="selectGame('GTA SA')">GTA SA</button>
+			<button onclick="selectGame('Award')">Award for Agam</button>
+			
+		</div>
+	</div>
+
+	<!-- BGMI screen with birthday message and photo -->
+	<div id="bgmiScreen" style="display: none;">
+		<img  src="Bgmi.png" alt="Agam's birthday BGMI squad photo">
+		<h1>Happy birthday to my PSM (Permanent squad member)!</h1>
+
+	</div>
+	<div id="minecraftScreen" style="display: none;">
+		<img style="margin-left: 200px;" src="Minecraft.png" alt="Agam's birthday mine photo">
+		<h1>Happy birthday to the greatest "MIND" possible.- From - trimark to aadigm </h1>
+
+	</div>
+	<div id="gtaSaScreen" style="display: none;">
+		<img style="justify-content: center;align-items: center;align-self: center;" src="gtaSA.png" alt="Agam's birthday mine photo">
+		<h1>Happy birthday to the Ganster boy </h1>
+		
+	</div>
+	<div id="awardScreen" style="display: none;">
+		<img style="justify-content: center;align-items: center;align-self: center;" src="Award.png" alt="Agam's birthday mine photo">
+		<h1>Happy birthday Agam.</h1>
+		<h2>Love you brother</h2>
+		
+	</div>
+
+	<script>
+		// Function to show birthday message and hide first button
+		function beginJourney() {
+			document.querySelector('button').style.display = 'none';
+			document.getElementById('birthdayMessage').style.display = 'block';
+			document.getElementById('startButton').style.display = 'block';
+		}
+
+		// Function to show game selection and hide start button
+		function showGameSelection() {
+			document.getElementById('startButton').style.display = 'none';
+			document.getElementById('gameSelection').style.display = 'flex';
+
+		}
+
+		// Function to show BGMI screen and hide other screens
+		function showBGMI() {
+			document.getElementById('birthdayMessage').style.display = 'none';
+			document.getElementById('bgmiScreen').style.display = 'block';
+			
+		}
+		function showMinecraft() {
+			document.getElementById('birthdayMessage').style.display = 'none';
+			document.getElementById('minecraftScreen').style.display = 'block';
+			
+		}
+		function showGtaSA() {
+			document.getElementById('birthdayMessage').style.display = 'none';
+			document.getElementById('gtaSaScreen').style.display = 'block';
+			
+		}
+		function showAward() {
+			document.getElementById('birthdayMessage').style.display = 'none';
+			document.getElementById('awardScreen').style.display = 'block';
+			
+		}
+		function selectGame(game) {
+		if (game === 'BGMI') {
+		showBGMI();
+		}
+		if (game==='Minecraft'){
+		showMinecraft()
+		}
+		if (game==='GTA SA'){
+		showGtaSA()
+		}
+		if (game==="Award"){
+			showAward()
+		}
+		}
+	</script>
